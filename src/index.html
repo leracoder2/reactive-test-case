@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Услуги и сервисы Пермского края</title>
+</head>
+<body>
+  <header class="header">
+    <div class="header__wrapper container">
+      <a class="header__logo" href="/"  title="Главная">
+        <picture>
+          <img class="header__logo-img" src="img/logo.svg" width="31" height="56" alt="«Услуги и сервисы Пермского края»">
+        </picture>
+        <span class="header__logo-text">
+          Услуги и сервисы Пермского края
+        </span>
+      </a>
+      <a class="header__user" href="#" aria-label="Авторизован как пользователь Константинопольский К.К">
+        Константинопольский К.К
+      </a>
+      <button class="header__logout" type="button" aria-label="Выйти">
+        Выйти
+      </button>
+    </div>
+  </header>
+  <main class="service">
+    <div class="service__wrapper container">
+      <section class="service__info">
+        <h1 class="service__title" role="presentation">
+          Выдача градостроительного <br> плана земельного участка
+        </h1>
+
+        <p class="service__description">
+          Градостроительный план земельного участка выдается в целях обеспечения субъектов градостроительной деятельности 
+          информацией, необходимой для архитектурно-строительного проектирования, строительства, реконструкции объектов 
+          капитального строительства в границах земельного участка.
+        </p>
+
+        <p class="service__provider">
+          <picture>
+            <img class="service__provider-img" src="img/government.svg" width="64" height="64" alt="«Орган местного самоуправления»">
+          </picture>
+          <b>Услугу предоставляет</b>
+          <span class="service__provider-name">
+            Орган местного самоуправления
+          </span>
+        </p>
+      </section>
+      <hr>
+      <section class="service__form">
+        <form class="form" aria-label="Заполните форму">
+          <fieldset class="form__step">
+            <span class="form__step-title">
+              <i class="form__step-numb">1</i>
+              Выбор заявителя
+            </span>
+            <div class="form__step-wrapper">
+              <ul class="form__list">
+                <li class="form__item">
+                  <input class="form__radio visually-hidden" type="radio" id="physical-person" name="applicant" value="physical-person" checked>
+                  <label class="form__label" for="physical-person">
+                    <b>Константинопольский К.К.</b> <br>
+                    Физическое лицо
+                  </label>
+                </li>
+                <li class="form__item">
+                  <input class="form__radio visually-hidden" type="radio" id="legal-person" name="applicant" value="legal-person">
+                  <label class="form__label" for="legal-person">
+                    <b>ООО «Константинополь»</b> <br>
+                    Юридическое лицо
+                  </label>
+                </li>
+              </ul>
+              
+              <button type="button" class="form__step-next">
+                Продолжить
+              </button>
+            </div>
+          </fieldset>
+
+          <fieldset class="form__step">
+            <span class="form__step-title">
+              <i class="form__step-numb">2</i>
+              Данные заявителя
+            </span>
+            <div class="form__step-wrapper">
+              <ul class="form__list">
+                <li class="form__item">
+                  <label class="form__label" for="surname">Фамилия</label>
+                  <input class="form__field" type="text" name="surname" id="surname" placeholder="Константинопольский" required>
+                </li>
+                <li class="form__item">
+                  <label class="form__label" for="name">Имя</label>
+                  <input class="form__field" type="text" name="name" id="name" placeholder="Константин" required>
+                </li>
+                <li class="form__item">
+                  <label class="form__label" for="middle-name">Отчество</label>
+                  <input class="form__field" type="text" name="middle-name" id="middle-name" placeholder="Константинович" required>
+                </li>
+                <li class="form__item">
+                  <label class="form__label" for="email">Электронная почта</label>
+                  <input class="form__field" type="email" id="email" name="email" placeholder="konstantinopolskiy@mail.ru" required>
+                </li>
+                <li class="form__item">
+                  <label class="form__label" for="phone">Телефон:</label>
+                  <input class="form__field" type="tel" name="phone" id="phone" placeholder="+7 (901) 123-45-67" required>
+                </li>
+              </ul>
+              <ul class="form__list form__passport">
+                <li class="form__item form__passport-item">
+                  <b>Документ, удостоверяющий личность</b>
+                  <label class="form__label" for="type-document">Документ</label>
+                  <select class="form__field" name="type-document" id="type-document" required>
+                    <option value="passport">Паспорт</option>
+                    <option value="birth-certificate">Свидетельство о рождении</option>
+                  </select>
+                </li>
+                <li class="form__item form__passport-item">
+                  <label class="form__label" for="passport-series">Серия</label>
+                  <input class="form__field" type="text" name="passport-series" id="passport-series" placeholder="5700" required>
+                </li>
+                <li class="form__item form__passport-item">
+                  <label class="form__label" for="passport-number">Номер</label>
+                  <input class="form__field" type="text" name="passport-number" id="passport-number" placeholder="555888" required>
+                </li>
+                <li class="form__item form__passport-item">
+                  <span>Когда выдан</span>
+                  <label class="form__label" for="passport-issue-day">День</label>
+                  <input class="form__field" type="text" name="passport-issue-day" id="passport-issue-day" placeholder="19" required>
+                </li>
+                <li class="form__item form__passport-item">
+                  <label class="form__label" for="passport-issue-month">Месяц</label>
+                  <input class="form__field" type="text" name="passport-issue-month" id="passport-issue-month" placeholder="10" required>
+                </li>
+                <li class="form__item form__passport-item">
+                  <label class="form__label" for="passport-issue-year">Год</label>
+                  <input class="form__field" type="text" name="passport-issue-year" id="passport-issue-year" placeholder="1990" required>
+                </li>
+              </ul>  
+              <button  type="button" class="form__step-next">
+                Продолжить
+              </button>
+            </div>
+          </fieldset>
+
+          <fieldset class="form__step">
+            <span class="form__step-title">
+              <i class="form__step-numb">3</i>
+              Согласие
+            </span>
+
+            <div class="form__step-wrapper">
+              <div class="form-consent">
+                <b>Требуется ваше согласие по следующим пунктам:</b>
+                <ul class="form-consent__list">
+                  <li class="form-consent__list-item">
+                    Я подтверждаю, что вся представленная информация является достоверной и точной;
+                  </li>
+                  <li class="form-consent__list-item">
+                    Я несу ответственность в соответствии с действующим законодательством Российской Федерации за 
+                    предоставление заведомо ложных или неполных сведений;
+                  </li>
+                  <li class="form-consent__list-item">
+                    Я выражаю свое согласие на необходимое использование и обработку своих персональных данных, 
+                    в том числе в информационных системах;
+                  </li>
+                  <li class="form-consent__list-item">
+                    Со сроками оказания государственной услуги ознакомлен.
+                  </li>
+                </ul>
+              </div>
+             
+              <ul class="form__list">
+                <li class="form__item">
+                  <input class="form__checkbox visually-hidden" type="checkbox" id="agreement-terms" name="agreement-terms" value="agreement-terms">
+                  <label class="form__label" for="agreement-terms">
+                    Я подтверждаю свое согласие со всеми вышеперечисленными пунктами
+                  </label>
+                </li>
+                <li class="form__item">
+                  <input class="form__checkbox visually-hidden" type="checkbox" id="notification-agreement" name="notification-agreement" value="legal-person">
+                  <label class="form__label" for="notification-agreement">
+                    Я уведомлен о том, что результат будет получен в электронном виде
+                  </label>
+                </li>
+              </ul>
+  
+              <p class="form__notice">
+                Пожалуйста, еще раз внимательно проверьте все данные перед отправкой
+              </p>
+  
+              <input class="form__submit" type="submit" value="Отправить" />
+  
+              <p class="form__consent-link">
+                Нажимая кнопку «Отправить», вы соглашаетесь 
+                <a href="#">с правилами хранения и обработки персональных данных</a>
+              </p>
+            </div>            
+          </fieldset>
+        </form>
+        <div class="form-result form-result--disabled">
+          <span class="form-result__title">
+            Заявление принято
+          </span>
+          <div class="form-result__wrapper">
+            <p class="form-result__text">
+              Номер заявления <b>RU-1234567.</b> Максимальный срок предоставления услуги — 20 рабочих дней. 
+              Следите за статусом заявления в <a href="#">Личном кабинете.</a>
+              <br><br>
+              Если у вас остались вопросы по оказанию услуги, пожалуйста, обращайтесь по телефону 
+              <span class="nobr">+7 (342) 123-45-67.</span>
+            </p>
+            <a href="#" class="form-result__link">Вернуться в каталог</a>
+            <a href="#" class="form-result__link">Перейти в личный кабинет</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js"></script>
+  <script>
+    if (window.jQuery) {
+      $("#phone").mask('+7 (999) 999-99-99');
+      $("#passport-series").mask("9999");
+      $("#passport-number").mask("999999");
+      $("#passport-issue-day").mask("99");
+      $("#passport-issue-month").mask("99");
+      $("#passport-issue-year").mask("9999");
+    } else {
+      alert("jQuery is not loaded.");
+    }
+  </script>
+</body>
+</html>

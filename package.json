@@ -1,0 +1,29 @@
+{
+  "name": "reactive-test-case",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "webpack serve --open --mode=development",
+    "build:dev": "webpack --mode=development",
+    "build:prod": "webpack --mode=production"
+  },
+  "author": "Idrisova Elmira",
+  "dependencies": {
+    "imask": "^7.6.1",
+    "ts-input-mask": "^2.2.0",
+    "webpack": "^5.88.2",
+    "yarn": "^1.22.19"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^12.0.2",
+    "css-loader": "^6.8.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.3",
+    "sass": "^1.65.1",
+    "sass-loader": "^13.3.2",
+    "style-loader": "^3.3.3",
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.1.6",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}

@@ -1,0 +1,23 @@
+.container {
+	display: block;
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 100%;
+
+	@media (min-width: $breakpoint-smartphone) {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	@media (min-width: $breakpoint-tablet) {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+
+	@media (min-width: $breakpoint-desktop) {
+		max-width: 1120px;
+		margin: 0 auto;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
