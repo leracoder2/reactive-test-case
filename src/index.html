@@ -106,7 +106,7 @@
                 </li>
                 <li class="form__item">
                   <label class="form__label" for="phone">Телефон:</label>
-                  <input class="form__field" type="tel" name="phone" id="phone" placeholder="+7 (901) 123-45-67" required>
+                  <input class="form__field" type="phone" name="phone" id="phone" placeholder="+7 (901) 123-45-67" required>
                 </li>
               </ul>
               <ul class="form__list form__passport">
@@ -220,20 +220,5 @@
       </section>
     </div>
   </main>
-
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js"></script>
-  <script>
-    if (window.jQuery) {
-      $("#phone").mask('+7 (999) 999-99-99');
-      $("#passport-series").mask("9999");
-      $("#passport-number").mask("999999");
-      $("#passport-issue-day").mask("99");
-      $("#passport-issue-month").mask("99");
-      $("#passport-issue-year").mask("9999");
-    } else {
-      alert("jQuery is not loaded.");
-    }
-  </script>
 </body>
 </html>

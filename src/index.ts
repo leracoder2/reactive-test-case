@@ -12,6 +12,64 @@ const getNextSibling = (element: HTMLElement): HTMLElement | null => {
   return element.nextElementSibling as HTMLElement;
 };
 
+function maskPhoneFields() : void {
+	const phoneFields = document.querySelectorAll<HTMLInputElement | null>('[type="phone"]');
+
+	if (!phoneFields) {
+		return;
+	}
+
+	phoneFields.forEach((input) => {
+		input.addEventListener("input", phoneMask);
+		input.addEventListener("focus", phoneMask);
+		input.addEventListener("blur", phoneMask);
+		
+		function phoneMask(event: { type: string; }) {
+			const blank = '+7 (___) ___-__-__';   
+			const val = this.value.replace(/\D/g, '').replace(/^[0-9]/, '7');
+			
+			let i = 0;
+			this.value = blank.replace(/./g, function(char) {
+				if (/[_\d]/.test(char) && i < val.length) return val.charAt(i++);
+				return i >= val.length ? "" : char;
+			});
+		};
+	});
+}
+
+function maskNumberFields(nameField:string, pattern: string) : void {
+	const input = document.querySelector<HTMLInputElement | null>(nameField);
+
+	if (!input) {
+		return;
+	}
+
+	input.addEventListener("input", numberMask);
+	input.addEventListener("focus", numberMask);
+	input.addEventListener("blur", numberMask);
+
+	function numberMask(event: { type: string; }) {
+		const blank = pattern;   
+		const val = this.value.replace(/\D/g, '');
+		
+		let i = 0;
+		this.value = blank.replace(/./g, function(char) {
+			if (/[_\d]/.test(char) && i < val.length) return val.charAt(i++);
+			return i >= val.length ? "" : char;
+		});
+	};
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+	maskPhoneFields();
+	
+	maskNumberFields('#passport-series', '____');
+	maskNumberFields('#passport-number', '______');
+	maskNumberFields('#passport-issue-day', '__');
+	maskNumberFields('#passport-issue-month', '__');
+	maskNumberFields('#passport-issue-year', '____');
+});
+
 document.addEventListener('DOMContentLoaded', () => {
 	let errorList : HTMLElement[] = [];
 	const form = document.querySelector<HTMLFormElement | null>('.form');
@@ -58,7 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
 				} else {
 					field.classList.remove('form__field--empty');
 				}
-				
 			});
 
 			if (errorList.length > 0) {
@@ -99,6 +156,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		formResult.classList.remove('form-result--disabled');
 	});
 });
+
+
 
 export {};
   
